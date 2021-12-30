@@ -15,8 +15,7 @@
    - http://code.dpdk.org/dpdk/v19.11/source/lib/librte_ring/rte_ring.c
    - https://elixir.bootlin.com/linux/latest/source/include/linux/kfifo.h
  use alignas to prevent performance strike caused by cache line false sharing
-   -
-   https://www.intel.com/content/www/us/en/develop/documentation/vtune-cookbook/top/tuning-recipes/false-sharing.html
+   - https://www.intel.com/content/www/us/en/develop/documentation/vtune-cookbook/top/tuning-recipes/false-sharing.html
    - false sharing solution learned from github.com/rigtorp/SPSCQueue and github.com/MengRao/SPSC_Queue
 
  feature:
@@ -25,3 +24,9 @@
   - support batch dequeue
  
  further improvement: use atomic instead of volatile + memory fence
+ 
+ testing:
+ 
+ ```
+ make test
+ ```
